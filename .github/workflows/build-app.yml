@@ -18,4 +18,11 @@ jobs:
 
       - name: Unit tests
         run: ci/unit-test-app.sh
+
+      - name: Build docker
+        run: ci/build-docker.sh
+
+      - name: push docker
+        run: ci/push-docker.sh
+
         
