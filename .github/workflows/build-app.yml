@@ -4,3 +4,18 @@ on:
     branches: main
   pull_request:
     branches: main
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    container: gradle:6-jdk11
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v5
+
+      - name: Build step
+        run: ci/build-app.sh
+
+      - name: Unit tests
+        run: ci/unit-test-app.sh
+        
