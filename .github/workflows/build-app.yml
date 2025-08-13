@@ -11,7 +11,7 @@ jobs:
     container: gradle:6-jdk11
     steps:
       - name: Clone repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Build step
         run: ci/build-app.sh
@@ -35,7 +35,6 @@ jobs:
         with:
           name: code
           path: .
-          include-hidden-file: true
 
       - name: run linting
         uses: super-linter/super-linter/slim@v7
